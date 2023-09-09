@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="login page">
+        <link rel="icon" type="image/x-icon" href="">
+        <link rel="stylesheet" href="login.css">
+        <script src="login.js"></script>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <div class="form div">
+            <span class="h2">Login</span>
+            <br>
+            <span class="msg" style="color: #<%= color %>;">
+                <% if(msg) { %>
+                    <%= msg %>
+                <% } %>
+            </span>
+            <br>
+            <form onsubmit=" return validate();" action="/login" method="post">
+                <label for="email">Email</label>
+                <span style="color: #FF0000;" id="emailspan"></span>
+                <br>
+                <input type="text" id="email" name="email">
+                <br><br>
+                <label for="pass">Password</label>
+                <span style="color: #FF0000;" id="passspan"></span>
+                <br>
+                <input type="password" id="pass" name="pass">
+                <br><br>
+                <button type="submit">Login</button>
+                <br><br>
+                <a href="/signup">don't have an account ?</a>
+            </form>
+        </div>
+    </body>
+</html>

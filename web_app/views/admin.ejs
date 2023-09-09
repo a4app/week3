@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="admin page">
+        <link rel="icon" type="image/x-icon" href="">
+        <link rel="stylesheet" href="admin.css">
+        <script src="admin.js"></script>
+        <title>Admin Page</title>
+    </head>
+    <body>
+        <a href="/logout">
+            <div class="logout">Logout</div>
+        </a>
+        <div class="h2">Admin Page</div>
+        <div class="error" style="color: #FF0000">
+            <% if(msg) { %>
+                <%= msg %>
+            <% } %>
+        </div>
+            <br>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th></th>
+            </tr>
+            <% for(let i=0;i< users.length ; i++) { %>
+                <tr>
+                    <td><%= users[i].name %></td>
+                    <td><%= users[i].email %></td>
+                    <td><%= users[i].pass %></td>
+                    <td>
+                        <div class="button" style="background-color: #ff0000;">
+                            <a href="/delete?email=<%=users[i].email%>">Remove</a>
+                        </div>
+                    </td>
+                </tr>
+            <% } %>
+            <tr>
+                <form action="/add" method="post" onsubmit=" return validate();">
+                    <td><input type="text" name="name" placeholder="Name . . ." id="name"></td>
+                    <td><input type="text" name="email" placeholder="Email . . ." id="email"></td>
+                    <td><input type="password" name="pass" placeholder="Password . . ." id="pass"></td>
+                    <td>
+                        <button class="button" style="background-color: #00FF00;">
+                            Add
+                        </button>
+                    </td>
+                </form>
+            </tr>
+        </table>
+
+        <script>
+            if (performance.navigation.type == 2)
+                location.reload(true);
+        </script>
+
+    </body>
+</html>

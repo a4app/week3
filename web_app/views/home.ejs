@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="home page">
+        <link rel="icon" type="image/x-icon" href="">
+        <link rel="stylesheet" href="home.css">
+        <title>Login Page</title>
+    </head>
+    <body>
+        <div class="body">
+            <a href="/login" class="logout">Logout</a>
+            <div class="welcome">
+                <h1><%= name %></h1>
+                <h3><%= email %></h3>
+            </div>
+        </div>
+
+        <script>
+            if (performance.navigation.type === 2)
+                location.reload(true);
+        </script>
+
+    </body>
+</html>

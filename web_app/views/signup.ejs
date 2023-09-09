@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="signup page">
+        <link rel="icon" type="image/x-icon" href="">
+        <link rel="stylesheet" href="signup.css">
+        <script src="signup.js"></script>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <div class="form div">
+            <span class="h2">Signup</span class="h2">
+            <br>
+            <span class="msg">
+                <% if(msg) { %>
+                    <%= msg %>
+                <% } %>
+            </span>
+            <br>
+            <form onsubmit=" return validate();" action="/signup" method="post">
+                <label for="name">Name</label>
+                <span style="color: #FF0000;" id="namespan"></span>
+                <br>
+                <input type="text" id="name" name="name">
+                    <br><br>
+                <label for="email">Email</label>
+                <span style="color: #FF0000;" id="emailspan">
+                    <% msg %>
+                </span>
+                <br>
+                <input type="text" id="email" name="email">
+                    <br><br>
+                <label for="pass">Password</label>
+                <span style="color: #FF0000;" id="passspan"></span>
+                <br>
+                <input type="password" id="pass" name="pass">
+                    <br><br>
+                <label for="confm">Confirm Password</label>
+                <span style="color: #FF0000;" id="confmspan"></span>
+                <br>
+                <input type="password" id="confm">
+                    <br><br>
+                <button type="submit">Sign Up</button>
+                <br><br>
+                <a href="/login">already have an account ?</a>
+            </form>
+        </div>
+    </body>
+</html>
